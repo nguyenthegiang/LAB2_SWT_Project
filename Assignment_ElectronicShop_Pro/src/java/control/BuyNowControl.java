@@ -5,7 +5,7 @@
  */
 package control;
 
-import DAL.CartDAO;
+import dao.CartDAO;
 import entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;

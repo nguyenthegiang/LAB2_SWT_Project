@@ -5,9 +5,9 @@
  */
 package control;
 
-import DAL.CategoryDAO;
-import DAL.ProductDAO;
-import DAL.UserDAO;
+import dao.CategoryDAO;
+import dao.ProductDAO;
+import dao.UserDAO;
 import entity.Account;
 import entity.Category;
 import entity.Product;

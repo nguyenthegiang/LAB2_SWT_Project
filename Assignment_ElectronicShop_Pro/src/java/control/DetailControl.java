@@ -5,8 +5,9 @@
  */
 package control;
 
+import dao.ProductDAO;
+import dao.CategoryDAO;
 import entity.*;
-import DAL.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;

@@ -5,7 +5,7 @@
  */
 package control;
 
-import DAL.*;
+import dao.CartDAO;
 import entity.Account;
 import entity.Product;
 import java.io.IOException;
