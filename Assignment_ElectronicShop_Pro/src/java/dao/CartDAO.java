@@ -38,6 +38,7 @@ public class CartDAO extends BaseDAO<Account> {
                 list.add(new Cart(p, amount));
             }
         } catch (Exception e) {
+            System.out.println("Fail to get information from Database!");
         }
         return list;
     }
