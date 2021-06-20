@@ -39,8 +39,8 @@ public class AddToCartControl extends HttpServlet {
         int UserID = a.getId();
         
         //Add data to Database
-        CartDAO CartDAO = new CartDAO();
-        boolean notOutOfStock = CartDAO.addToCart(UserID, ProductID, 1);
+        CartDAO cartDAO = new CartDAO();
+        boolean notOutOfStock = cartDAO.addToCart(UserID, ProductID, 1);
         
         PrintWriter out = response.getWriter();
         if (notOutOfStock) {
