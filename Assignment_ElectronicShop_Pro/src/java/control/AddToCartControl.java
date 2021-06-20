@@ -31,7 +31,7 @@ public class AddToCartControl extends HttpServlet {
         
         //Get data from JSP
         String id = request.getParameter("ProductID");
-        int ProductID = Integer.parseInt(id);
+        int productID = Integer.parseInt(id);
         
         //Using session to get Account ID
         HttpSession session = request.getSession(); 
@@ -40,7 +40,7 @@ public class AddToCartControl extends HttpServlet {
         
         //Add data to Database
         CartDAO cartDAO = new CartDAO();
-        boolean notOutOfStock = cartDAO.addToCart(UserID, ProductID, 1);
+        boolean notOutOfStock = cartDAO.addToCart(UserID, productID, 1);
         
         PrintWriter out = response.getWriter();
         if (notOutOfStock) {
