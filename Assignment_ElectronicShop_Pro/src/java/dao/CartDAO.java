@@ -38,6 +38,7 @@ public class CartDAO extends BaseDAO<Account> {
                 list.add(new Cart(p, amount));
             }
         } catch (Exception e) {
+            System.out.println("Fail to get information from Database!");
         }
         return list;
     }
@@ -56,6 +57,7 @@ public class CartDAO extends BaseDAO<Account> {
                 count = rs.getInt(1);
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
         return count;
     }
@@ -71,6 +73,7 @@ public class CartDAO extends BaseDAO<Account> {
                 count = rs.getInt(1);
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
         return count;
     }
@@ -98,6 +101,7 @@ public class CartDAO extends BaseDAO<Account> {
                         ps.setInt(3, productID);
                         ps.executeUpdate();
                     } catch (Exception e) {
+                        e.printStackTrace();
                     }
                     //Call to delete1amount
                     dao.delete1Amount(productID);
@@ -113,6 +117,7 @@ public class CartDAO extends BaseDAO<Account> {
                 ps.setInt(3, amount);
                 ps.executeUpdate();
             } catch (Exception e) {
+                e.printStackTrace();
             }
             delete1Amount(productID);
             return true;
@@ -120,15 +125,16 @@ public class CartDAO extends BaseDAO<Account> {
     }
 
     //Minus 1 amount from Product after 1 Customer Add to cart
-    public void delete1Amount(int ProductID) {
+    public void delete1Amount(int productID) {
         String query = "update Product\n"
                 + "set Amount = Amount - 1\n"
                 + "where ProductID = ?";
         try {
             ps = connection.prepareStatement(query);
-            ps.setInt(1, ProductID);
+            ps.setInt(1, productID);
             ps.executeUpdate();
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
