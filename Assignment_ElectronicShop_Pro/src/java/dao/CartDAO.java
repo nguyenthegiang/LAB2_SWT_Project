@@ -125,13 +125,13 @@ public class CartDAO extends BaseDAO<Account> {
     }
 
     //Minus 1 amount from Product after 1 Customer Add to cart
-    public void delete1Amount(int ProductID) {
+    public void delete1Amount(int productID) {
         String query = "update Product\n"
                 + "set Amount = Amount - 1\n"
                 + "where ProductID = ?";
         try {
             ps = connection.prepareStatement(query);
-            ps.setInt(1, ProductID);
+            ps.setInt(1, productID);
             ps.executeUpdate();
         } catch (Exception e) {
         }
