@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="Assignment_ElectronicShop_Pro" default="default" basedir=".">
-    <description>Builds, tests, and runs the project Assignment_ElectronicShop_Pro.</description>
+<project name="Assignment_ElectronicShop" default="default" basedir=".">
+    <description>Builds, tests, and runs the project Assignment_ElectronicShop.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
