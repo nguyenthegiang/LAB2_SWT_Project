@@ -120,6 +120,7 @@ public class BuyControl extends HttpServlet {
 
         PrintWriter out = response.getWriter();
         out.println(getPriceWithDot(total + shipValue) + " VND");
+        out.close();
         
         request.setAttribute("total", getPriceWithDot(total + shipValue));
     }
