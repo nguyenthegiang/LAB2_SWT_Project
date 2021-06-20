@@ -32,6 +32,7 @@ public class UserDAO extends BaseDAO<Account> {
                 return new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5));
             }
         } catch (Exception e) {
+             System.out.println("Error: "+e.getMessage());
         }
         return null;
     }
@@ -44,6 +45,7 @@ public class UserDAO extends BaseDAO<Account> {
             ps.setString(2, pass);
             ps.executeUpdate();
         } catch (Exception e) {
+             System.out.println("Error: "+e.getMessage());
         }
     }
 
@@ -57,6 +59,7 @@ public class UserDAO extends BaseDAO<Account> {
                 list.add(new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5)));
             }
         } catch (Exception e) {
+             System.out.println("Error: "+e.getMessage());
         }
         return list;
     }
@@ -74,6 +77,7 @@ public class UserDAO extends BaseDAO<Account> {
             ps.setString(4, id);
             ps.executeUpdate();
         } catch (Exception e) {
+             System.out.println("Error: "+e.getMessage());
         }
         return;
     }
@@ -94,6 +98,7 @@ public class UserDAO extends BaseDAO<Account> {
             ps.setString(5, id);
             ps.executeUpdate();
         } catch (Exception e) {
+             System.out.println("Error: "+e.getMessage());
         }
     }
     
@@ -107,6 +112,7 @@ public class UserDAO extends BaseDAO<Account> {
                 return new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5));
             }
         } catch (Exception e) {
+            System.out.println("Error: "+e.getMessage());
         }
         return null;
     }
@@ -120,6 +126,7 @@ public class UserDAO extends BaseDAO<Account> {
                 return rs.getInt(1);
             }
         } catch (Exception e) {
+            System.out.println("Error: "+e.getMessage());
         }
         return 0;
     }
