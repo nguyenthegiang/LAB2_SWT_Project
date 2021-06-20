@@ -10,6 +10,9 @@ public class Account {
     private int isSell; //If Account is Seller, isSell = 1
     private int isAdmin; //If Account is Admin, isAdmin = 1
 
+    /**
+     * Empty constructor
+     */
     public Account() {
     }
 

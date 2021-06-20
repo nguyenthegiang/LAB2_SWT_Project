@@ -36,16 +36,17 @@ public class ShipDAO extends BaseDAO<Account> {
     
     public int getShipPriceByCityName(String cityName) {
         String query = "select ShipPrice from Ship where CityName = ?";
+        int a =0;
         try {
             ps = connection.prepareStatement(query);
             ps.setString(1, cityName);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return rs.getInt(1);
+                a= rs.getInt(1);
             }
         } catch (Exception e) {
         }
-        return 0;
+        return a;
     }
 
     public static void main(String[] args) {
