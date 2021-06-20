@@ -73,6 +73,7 @@ public class CartDAO extends BaseDAO<Account> {
                 count = rs.getInt(1);
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
         return count;
     }
