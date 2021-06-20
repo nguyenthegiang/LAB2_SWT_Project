@@ -36,11 +36,11 @@ public class AddToCartControl extends HttpServlet {
         //Using session to get Account ID
         HttpSession session = request.getSession(); 
         Account a = (Account) session.getAttribute("acc"); 
-        int UserID = a.getId();
+        int userID = a.getId();
         
         //Add data to Database
         CartDAO cartDAO = new CartDAO();
-        boolean notOutOfStock = cartDAO.addToCart(UserID, productID, 1);
+        boolean notOutOfStock = cartDAO.addToCart(userID, productID, 1);
         
         PrintWriter out = response.getWriter();
         if (notOutOfStock) {
