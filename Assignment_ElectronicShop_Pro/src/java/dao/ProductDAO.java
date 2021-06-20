@@ -83,11 +83,12 @@ public class ProductDAO extends BaseDAO<Product> {
                 list.add(new Product(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5)));
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
         return list;
     }
 
-    public void edit(String id, String name, String description, String price, String imageLink, String CategoryID, String SellerID, String amount) {
+    public void edit(String id, String name, String description, String price, String imageLink, String categoryID, String sellerID, String amount) {
         String query = "UPDATE Product\n"
                 + "SET ProductName = ?,\n"
                 + "Description = ?,\n"
@@ -104,12 +105,13 @@ public class ProductDAO extends BaseDAO<Product> {
             ps.setString(2, description);
             ps.setString(3, price);
             ps.setString(4, imageLink);
-            ps.setString(5, CategoryID);
-            ps.setString(6, SellerID);
+            ps.setString(5, categoryID);
+            ps.setString(6, sellerID);
             ps.setString(7, amount);
             ps.setString(8, id);
             ps.executeUpdate();
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -149,8 +151,8 @@ public class ProductDAO extends BaseDAO<Product> {
         String query = "SELECT COUNT(*) FROM Product";
         try {
             ps = connection.prepareStatement(query);
-            rs = ps.executeQuery();
-            while (rs.next()) {
+            rs = ps.executeQuery();          
+            if (rs.next()) {
                 return rs.getInt(1);
             }
         } catch (Exception e) {
@@ -249,16 +251,16 @@ public class ProductDAO extends BaseDAO<Product> {
         return 0;
     }
 
-    public int countProductBySeller(int SellerID) {
-        if (SellerID == 0) {
+    public int countProductBySeller(int sellerID) {
+        if (sellerID == 0) {
             return countProduct();
         } else {
             String query = "SELECT COUNT(*) FROM Product WHERE SellerID = ?";
             try {
                 ps = connection.prepareStatement(query);
-                ps.setInt(1, SellerID);
+                ps.setInt(1, sellerID);
                 rs = ps.executeQuery();
-                while (rs.next()) {
+                if (rs.next()) {
                     return rs.getInt(1);
                 }
             } catch (Exception e) {
