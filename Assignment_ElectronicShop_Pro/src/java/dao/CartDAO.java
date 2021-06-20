@@ -117,6 +117,7 @@ public class CartDAO extends BaseDAO<Account> {
                 ps.setInt(3, amount);
                 ps.executeUpdate();
             } catch (Exception e) {
+                e.printStackTrace();
             }
             delete1Amount(productID);
             return true;
