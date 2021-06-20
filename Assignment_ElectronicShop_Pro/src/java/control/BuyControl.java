@@ -68,9 +68,9 @@ public class BuyControl extends HttpServlet {
         HttpSession session = request.getSession(); //Dùng session để gọi đến id
         Account a = (Account) session.getAttribute("acc"); //Gọi đến account -> Phải ép kiểu để thành Object
 
-        CartDAO CartDAO = new CartDAO();
+        CartDAO cartDAO = new CartDAO();
         ShipDAO ShipDAO = new ShipDAO();
-        List<Cart> listCart = CartDAO.getCart(a.getId()); //Truyền vào id của account
+        List<Cart> listCart = cartDAO.getCart(a.getId()); //Truyền vào id của account
         
         if (listCart.size() == 0) {
             response.sendRedirect("show");
