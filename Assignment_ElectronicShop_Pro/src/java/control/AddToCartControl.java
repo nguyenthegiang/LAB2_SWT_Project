@@ -48,7 +48,7 @@ public class AddToCartControl extends HttpServlet {
         } else {
             out.println("Sorry, Product is out of stock");
         }
-        
+        out.close();
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
