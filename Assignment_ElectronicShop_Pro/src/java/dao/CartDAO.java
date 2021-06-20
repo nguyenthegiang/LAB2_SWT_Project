@@ -101,6 +101,7 @@ public class CartDAO extends BaseDAO<Account> {
                         ps.setInt(3, productID);
                         ps.executeUpdate();
                     } catch (Exception e) {
+                        e.printStackTrace();
                     }
                     //Call to delete1amount
                     dao.delete1Amount(productID);
