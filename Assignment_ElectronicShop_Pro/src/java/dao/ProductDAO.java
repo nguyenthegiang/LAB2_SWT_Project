@@ -6,7 +6,6 @@
 package dao;
 
 import entity.*;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
