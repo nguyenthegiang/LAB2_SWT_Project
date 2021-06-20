@@ -5,8 +5,9 @@
  */
 package dao;
 
-import entity.*;
-import java.sql.Connection;
+
+import entity.Product;
+import entity.ProductInManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;

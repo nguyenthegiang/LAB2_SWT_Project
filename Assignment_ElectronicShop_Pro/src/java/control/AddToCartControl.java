@@ -31,16 +31,16 @@ public class AddToCartControl extends HttpServlet {
         
         //Get data from JSP
         String id = request.getParameter("ProductID");
-        int ProductID = Integer.parseInt(id);
+        int productID = Integer.parseInt(id);
         
         //Using session to get Account ID
         HttpSession session = request.getSession(); 
         Account a = (Account) session.getAttribute("acc"); 
-        int UserID = a.getId();
+        int userID = a.getId();
         
         //Add data to Database
-        CartDAO CartDAO = new CartDAO();
-        boolean notOutOfStock = CartDAO.addToCart(UserID, ProductID, 1);
+        CartDAO cartDAO = new CartDAO();
+        boolean notOutOfStock = cartDAO.addToCart(userID, productID, 1);
         
         PrintWriter out = response.getWriter();
         if (notOutOfStock) {
@@ -48,7 +48,7 @@ public class AddToCartControl extends HttpServlet {
         } else {
             out.println("Sorry, Product is out of stock");
         }
-        
+        out.close();
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
